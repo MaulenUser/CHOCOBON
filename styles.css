@@ -939,6 +939,31 @@ button {
 
   .hero {
     padding-top: 1rem;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .hero-visual {
+    order: 1;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 0.75rem;
+    align-items: end;
+    padding: 0.4rem 0 0.2rem;
+  }
+
+  .hero-copy {
+    order: 2;
+    max-width: none;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 0.65rem;
   }
 
   .hero-metrics,
@@ -957,15 +982,40 @@ button {
   .hero-image-main,
   .story-photo-large {
     width: 100%;
-    height: 19rem;
     margin: 0;
-    position: relative;
   }
 
-  .hero-image-side,
-  .story-photo-small,
-  .story-quote,
+  .hero-image-main {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    position: relative;
+    height: 18rem;
+  }
+
+  .hero-image-side {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    position: relative;
+    width: 100%;
+    height: 8.4rem;
+    left: auto;
+    bottom: auto;
+  }
+
   .hero-card {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    position: relative;
+    left: auto;
+    top: auto;
+    max-width: none;
+    margin-top: 0;
+    padding: 0.95rem;
+    border-radius: 1.25rem;
+  }
+
+  .story-photo-small,
+  .story-quote {
     position: relative;
     width: 100%;
     left: auto;
@@ -975,7 +1025,6 @@ button {
     margin-top: 1rem;
   }
 
-  .hero-image-side,
   .story-photo-small {
     height: 12.5rem;
   }
@@ -995,6 +1044,15 @@ button {
     line-height: 1.65;
   }
 
+  .hero-card h2 {
+    font-size: 1.35rem;
+  }
+
+  .hero-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
   .hero-actions {
     flex-direction: column;
   }
@@ -1004,11 +1062,30 @@ button {
     min-width: 0;
   }
 
+  .hero-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.35rem;
+  }
+
   .hero-metrics article,
   .menu-summary,
   .gift-panel,
   .footer-card {
     padding: 1rem;
+  }
+
+  .hero-metrics article {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(12px);
+  }
+
+  .hero-metrics strong {
+    font-size: 0.95rem;
+  }
+
+  .hero-metrics span {
+    font-size: 0.8rem;
   }
 
   .category-strip {
@@ -1157,9 +1234,15 @@ button {
     font-size: 1.85rem;
   }
 
+  .hero-visual {
+    grid-template-columns: 1fr 0.88fr;
+    gap: 0.65rem;
+  }
+
   .hero-metrics {
+    grid-template-columns: 1fr;
     gap: 0.75rem;
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
   }
 
   .hero-image-main,
@@ -1167,7 +1250,10 @@ button {
     height: 16rem;
   }
 
-  .hero-image-side,
+  .hero-image-side {
+    height: 7rem;
+  }
+
   .story-photo-small {
     height: 10rem;
   }
@@ -1175,6 +1261,14 @@ button {
   .hero-card,
   .story-quote {
     padding: 1rem;
+  }
+
+  .hero-card h2 {
+    font-size: 1.18rem;
+  }
+
+  .hero-card p {
+    font-size: 0.78rem;
   }
 
   .category-card {
